@@ -6,6 +6,12 @@
       "sourceType": "com.example.algamoneyapi.config.properties.AlgamoneyApiProperty"
     },
     {
+      "name": "algamoney.mail",
+      "type": "com.example.algamoneyapi.config.properties.AlgamoneyApiProperty$Mail",
+      "sourceType": "com.example.algamoneyapi.config.properties.AlgamoneyApiProperty",
+      "sourceMethod": "public com.example.algamoneyapi.config.properties.AlgamoneyApiProperty.Mail getMail() "
+    },
+    {
       "name": "algamoney.seguranca",
       "type": "com.example.algamoneyapi.config.properties.AlgamoneyApiProperty$Seguranca",
       "sourceType": "com.example.algamoneyapi.config.properties.AlgamoneyApiProperty",
@@ -13,6 +19,26 @@
     }
   ],
   "properties": [
+    {
+      "name": "algamoney.mail.host",
+      "type": "java.lang.String",
+      "sourceType": "com.example.algamoneyapi.config.properties.AlgamoneyApiProperty$Mail"
+    },
+    {
+      "name": "algamoney.mail.password",
+      "type": "java.lang.String",
+      "sourceType": "com.example.algamoneyapi.config.properties.AlgamoneyApiProperty$Mail"
+    },
+    {
+      "name": "algamoney.mail.port",
+      "type": "java.lang.Integer",
+      "sourceType": "com.example.algamoneyapi.config.properties.AlgamoneyApiProperty$Mail"
+    },
+    {
+      "name": "algamoney.mail.username",
+      "type": "java.lang.String",
+      "sourceType": "com.example.algamoneyapi.config.properties.AlgamoneyApiProperty$Mail"
+    },
     {
       "name": "algamoney.origin-permitida",
       "type": "java.lang.String",

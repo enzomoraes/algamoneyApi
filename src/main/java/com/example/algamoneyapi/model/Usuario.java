@@ -10,6 +10,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "usuario")
 public class Usuario {
@@ -21,6 +23,7 @@ public class Usuario {
 	private String email;
 	private String senha;
 
+	@JsonIgnore
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(		name = "usuario_permissao", 
 					joinColumns = @JoinColumn(name = "codigo_usuario"), 

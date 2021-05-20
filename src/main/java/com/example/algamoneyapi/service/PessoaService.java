@@ -20,7 +20,11 @@ public class PessoaService {
 		
 		Optional<Pessoa> pessoaSalva = buscarPessoaPeloCodigo(codigo);
 		
-		BeanUtils.copyProperties(pessoa, pessoaSalva.get(), "codigo");
+		pessoaSalva.get().getContatos().clear();
+		pessoaSalva.get().getContatos().addAll(pessoa.getContatos());
+		pessoaSalva.get().getContatos().forEach(c -> c.setPessoa(pessoaSalva.get()));
+		
+		BeanUtils.copyProperties(pessoa, pessoaSalva.get(), "codigo", "contatos");
 		
 		return pessoaRepository.save(pessoaSalva.get());
 		
@@ -41,6 +45,12 @@ public class PessoaService {
 			throw new EmptyResultDataAccessException(1);
 		}
 		return pessoaSalva;
+	}
+
+	public Pessoa criar(Pessoa pessoa) {
+		pessoa.getContatos().forEach(c -> c.setPessoa(pessoa));
+		return pessoaRepository.save(pessoa);
+		
 	}
 	
 }
